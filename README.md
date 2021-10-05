@@ -1,5 +1,7 @@
 # go-mainrun
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/payfazz/go-mainrun.svg)](https://pkg.go.dev/github.com/payfazz/go-mainrun)
+
 Utility for main package
 
 ## How to use
