@@ -50,3 +50,26 @@ func Run(f func(ctx context.Context) error) {
 		func(l trace.Location) bool { return !l.InPkg("github.com/payfazz/go-mainrun") },
 	))
 }
+
+// Go run the f function in new go routine, and return chan to get the value returned by f
+func Go(f func() error) <-chan error {
+	ch := make(chan error, 1)
+	go func() { ch <- errors.Catch(f) }()
+	return ch
+}
+
+// Result of [Go2]
+type Go2Result[Result any] struct {
+	Result Result
+	Error  error
+}
+
+// similar with [Go] but returning some value instead of just error
+func Go2[Result any](f func() (Result, error)) <-chan Go2Result[Result] {
+	ch := make(chan Go2Result[Result])
+	go func() {
+		r, err := errors.Catch2(f)
+		ch <- Go2Result[Result]{r, err}
+	}()
+	return ch
+}
