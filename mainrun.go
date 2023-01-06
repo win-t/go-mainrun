@@ -9,7 +9,18 @@ import (
 
 	"github.com/payfazz/go-errors/v2"
 	"github.com/payfazz/go-errors/v2/trace"
+	"github.com/payfazz/go-typedcontext"
 )
+
+type osSignal os.Signal
+
+// Return nil if graceful shutdown is not requested yet, otherwise return the signal
+func Interrupted(ctx context.Context) os.Signal {
+	if s, ok := typedcontext.Get[*osSignal](ctx); ok {
+		return *s
+	}
+	return nil
+}
 
 // Run f
 //
@@ -21,14 +32,15 @@ func Run(f func(ctx context.Context) error) {
 	exitCode := 1
 	defer func() { os.Exit(exitCode) }()
 
-	ctx, cancel := context.WithCancel(context.Background())
+	var s osSignal
+	ctx, cancel := context.WithCancel(typedcontext.New(context.Background(), &s))
 	defer cancel()
 
 	go func() {
 		defer cancel()
 		c := make(chan os.Signal, 1)
 		signal.Notify(c, getInterruptSigs()...)
-		<-c
+		s = <-c
 		signal.Stop(c)
 	}()
 
