@@ -7,9 +7,9 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/payfazz/go-errors/v2"
-	"github.com/payfazz/go-errors/v2/trace"
-	"github.com/payfazz/go-typedcontext"
+	"github.com/win-t/go-errors/v2"
+	"github.com/win-t/go-errors/v2/trace"
+	"github.com/win-t/go-typedcontext"
 )
 
 type osSignal os.Signal
@@ -59,7 +59,7 @@ func Run(f func(ctx context.Context) error) {
 	}
 
 	fmt.Fprintln(os.Stderr, errors.FormatWithFilter(err,
-		func(l trace.Location) bool { return !l.InPkg("github.com/payfazz/go-mainrun") },
+		func(l trace.Location) bool { return !l.InPkg("github.com/win-t/go-mainrun") },
 	))
 }
 

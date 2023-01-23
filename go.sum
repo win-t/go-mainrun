@@ -1,4 +1,4 @@
-github.com/payfazz/go-errors/v2 v2.8.3 h1:giehOAhRfylwJ/pGGX5TxCzpynCqW315bPUDmUXaiss=
-github.com/payfazz/go-errors/v2 v2.8.3/go.mod h1:LR2b1DWco+Wj3Xnfz4ARBzxWxaPsArhCgVLKGoRXAAE=
-github.com/payfazz/go-typedcontext v1.1.0 h1:bA7Vf34OVbRzXv99R7DMJXEk8UENIDoDO5S/BurjEJ8=
-github.com/payfazz/go-typedcontext v1.1.0/go.mod h1:ihQ40EadmaLEH2dcX7p7+qmoFyBjCN7dugoznZ/7qzE=
+github.com/win-t/go-errors/v2 v2.8.3 h1:giehOAhRfylwJ/pGGX5TxCzpynCqW315bPUDmUXaiss=
+github.com/win-t/go-errors/v2 v2.8.3/go.mod h1:LR2b1DWco+Wj3Xnfz4ARBzxWxaPsArhCgVLKGoRXAAE=
+github.com/win-t/go-typedcontext v1.1.0 h1:bA7Vf34OVbRzXv99R7DMJXEk8UENIDoDO5S/BurjEJ8=
+github.com/win-t/go-typedcontext v1.1.0/go.mod h1:ihQ40EadmaLEH2dcX7p7+qmoFyBjCN7dugoznZ/7qzE=
