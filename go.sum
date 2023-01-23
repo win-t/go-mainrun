@@ -1,4 +1,4 @@
-github.com/win-t/go-errors/v2 v2.8.3 h1:giehOAhRfylwJ/pGGX5TxCzpynCqW315bPUDmUXaiss=
-github.com/win-t/go-errors/v2 v2.8.3/go.mod h1:LR2b1DWco+Wj3Xnfz4ARBzxWxaPsArhCgVLKGoRXAAE=
-github.com/win-t/go-typedcontext v1.1.0 h1:bA7Vf34OVbRzXv99R7DMJXEk8UENIDoDO5S/BurjEJ8=
-github.com/win-t/go-typedcontext v1.1.0/go.mod h1:ihQ40EadmaLEH2dcX7p7+qmoFyBjCN7dugoznZ/7qzE=
+github.com/win-t/go-errors v1.0.0 h1:IUITuIfC/uFISM/mkF11aqmg8VN1JfeZ4eMDv0dwlqk=
+github.com/win-t/go-errors v1.0.0/go.mod h1:AjmSdfFAlJWMoN1Gv/1NJ0Z/eWIm70ZG/ALmPLZhNsA=
+github.com/win-t/go-typedcontext v1.0.0 h1:1KA8y9iGyFZqS73+mLblT350Ao6h3WvSpfwOJ6lWoP4=
+github.com/win-t/go-typedcontext v1.0.0/go.mod h1:c9yDrInrtA32YZRgBwoFGMjWAP163YmEDeoRByWntlA=

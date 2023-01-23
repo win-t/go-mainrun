@@ -7,8 +7,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/win-t/go-errors/v2"
-	"github.com/win-t/go-errors/v2/trace"
+	"github.com/win-t/go-errors"
+	"github.com/win-t/go-errors/trace"
 	"github.com/win-t/go-typedcontext"
 )
 
@@ -22,13 +22,11 @@ func Interrupted(ctx context.Context) os.Signal {
 	return nil
 }
 
-// Run f
-//
-// The function Run never return.
+// Run f, this function never return.
 //
 // ctx passed to f will be canceled when graceful shutdown is requested,
 // if f returned error or panic, then log it and run os.Exit(1), otherwise run os.Exit(0).
-func Run(f func(ctx context.Context) error) {
+func Func(f func(ctx context.Context) error) {
 	exitCode := 1
 	defer func() { os.Exit(exitCode) }()
 

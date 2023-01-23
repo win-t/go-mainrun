@@ -7,7 +7,7 @@ var onError struct {
 	fn func(error) int
 }
 
-// When function that passed to Run is returned error or panic,
+// When function that passed to [Func] is returned error or panic,
 // run f, the returned int will be used to os.Exit function.
 func OnError(f func(error) int) {
 	onError.Lock()

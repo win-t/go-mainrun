@@ -7,7 +7,7 @@ Utility for main package
 ## How to use
 
 ```go
-func main() { mainrun.Run(run) }
+func main() { mainrun.Func(run) }
 
 func run(ctx context.Context) error {
 
