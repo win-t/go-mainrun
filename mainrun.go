@@ -3,12 +3,10 @@ package mainrun
 
 import (
 	"context"
-	"fmt"
 	"os"
 	"os/signal"
 
 	"github.com/win-t/go-errors"
-	"github.com/win-t/go-errors/trace"
 	"github.com/win-t/go-typedcontext"
 )
 
@@ -51,14 +49,16 @@ func Func(f func(ctx context.Context) error) {
 	onError.Lock()
 	defer onError.Unlock()
 
+	onErrorFn := onError.fn
+	if onErrorFn == nil {
+		onErrorFn = defaultOnError
+	}
+	exitCode = onErrorFn(err)
+
 	if onError.fn != nil {
 		exitCode = onError.fn(err)
 		return
 	}
-
-	fmt.Fprintln(os.Stderr, errors.FormatWithFilter(err,
-		func(l trace.Location) bool { return !l.InPkg("github.com/win-t/go-mainrun") },
-	))
 }
 
 // Go run the f function in new go routine, and return chan to get the value returned by f
