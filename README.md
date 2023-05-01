@@ -1,24 +1,3 @@
-# go-mainrun
+archived
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/win-t/go-mainrun.svg)](https://pkg.go.dev/github.com/win-t/go-mainrun)
-
-Utility for main package
-
-## How to use
-
-```go
-func main() { mainrun.Func(run) }
-
-func run(ctx context.Context) error {
-
-  // ...
-
-  return nil
-}
-```
-
-The `ctx` passed to run will be cancelled if the program caught os signal
-(graceful shutdown).
-
-The returned `error` will be printed to `stderr` and the program will be exit
-with exit code 1
+moved to https://github.com/win-t/go.winto.dev/tree/main/mainrun
